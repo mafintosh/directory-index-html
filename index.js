@@ -53,10 +53,10 @@ function toHTML (dir, list) {
       time = `${d}-${m}-${y} ${h}:${min}`
     }
 
+    if (isDir && name[name.length - 1] !== '/') name += '/'
+
     var p1 = PADDING_NAME.slice(name.length)
     var p2 = PADDING_DATE.slice(0, -size.length)
-
-    if (isDir && name[name.length - 1] !== '/') name += '/'
 
     return `<a href="${name}">${name}</a>${p1 + time + p2 + size}\n`
   }
