@@ -1,0 +1,23 @@
+{
+  "name": "directory-index-html",
+  "version": "0.0.0",
+  "description": "Make an plain html page containing a directory listing",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^8.6.0"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/directory-index-html.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/directory-index-html/issues"
+  },
+  "homepage": "https://github.com/mafintosh/directory-index-html"
+}
