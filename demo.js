@@ -12,7 +12,7 @@ http.createServer(function (req, res) {
     loop()
 
     function loop () {
-      if (!files.length) return res.end(toHTML(dir, entries))
+      if (!files.length) return res.end(toHTML(dir, entries, 'Listing created with "node demo.js"'))
 
       var name = files.shift()
       fs.stat('.' + dir + '/' + name, onstat)

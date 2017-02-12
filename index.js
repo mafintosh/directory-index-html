@@ -23,7 +23,7 @@ function pad (s) {
   return s < 10 ? ('0' + s) : ('' + s)
 }
 
-function toHTML (dir, list) {
+function toHTML (dir, list, footer) {
   if (dir[dir.length - 1] === '/') dir = dir.slice(0, -1)
 
   var prev = `<a href="../">../</a>\n`
@@ -33,7 +33,7 @@ function toHTML (dir, list) {
   return trim(`
     <html>
     <head><title>Index of ${dirname}</title></head>
-    <body bgcolor="white"><h1>Index of ${dirname}</h1><hr><pre>${pre}</pre><hr></body>
+    <body bgcolor="white"><h1>Index of ${dirname}</h1><hr><pre>${pre}</pre><hr>${footer ? '<i>' + footer + '</i>' : ''}</body>
     </html>
   `)
 

@@ -26,7 +26,7 @@ console.log(toHTML('/foo/bar', entries))
 
 ## API
 
-#### `var html = toHTML(dir, entries)`
+#### `var html = toHTML(dir, entries, [serverDescription])`
 
 Render a directory name and listing to an plain HTML string.
 
@@ -47,6 +47,8 @@ To figure out if an entry is a directory the module will one of the following th
 * Check if the path ends with a `/`
 * See if `entry.type === 'directory'`
 * See if `entry.mode` specifies a directory
+
+`serverDescription` an optional string describing the server that is included at the bottom of your page
 
 ## Demo
 
