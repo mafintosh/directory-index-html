@@ -1,6 +1,6 @@
 {
   "name": "directory-index-html",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Make an plain html page containing a directory listing",
   "main": "index.js",
   "dependencies": {},
