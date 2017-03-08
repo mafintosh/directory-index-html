@@ -58,6 +58,6 @@ function toHTML (dir, list, footer) {
     var p1 = PADDING_NAME.slice(name.length)
     var p2 = PADDING_DATE.slice(0, -size.length)
 
-    return `<a href="${name}">${name}</a>${p1 + time + p2 + size}\n`
+    return `<a href="${entry.href || name}">${name}</a>${p1 + time + p2 + size}\n`
   }
 }
