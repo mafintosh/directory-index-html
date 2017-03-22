@@ -23,7 +23,12 @@ function pad (s) {
   return s < 10 ? ('0' + s) : ('' + s)
 }
 
-function toHTML (dir, list, footer) {
+function toHTML (opts, list) {
+  if (typeof opts === 'string') opts = {directory: opts}
+
+  var dir = opts.directory
+  var footer = opts.footer
+
   if (dir[dir.length - 1] === '/') dir = dir.slice(0, -1)
 
   var prev = `<a href="../">../</a>\n`
@@ -55,9 +60,17 @@ function toHTML (dir, list, footer) {
 
     if (isDir && name[name.length - 1] !== '/') name += '/'
 
-    var p1 = PADDING_NAME.slice(name.length)
+    var fname = fmt(name)
+    var p1 = PADDING_NAME.slice(fname.length)
     var p2 = PADDING_DATE.slice(0, -size.length)
+    var href = entry.href || encodeURI(name)
+    if (opts.query) href += '?' + opts.query
 
-    return `<a href="${entry.href || name}">${name}</a>${p1 + time + p2 + size}\n`
+    return `<a href="${href}" title="${name}">${fname}</a>${p1 + time + p2 + size}\n`
   }
+}
+
+function fmt (name) {
+  if (name.length > 50) return name.slice(0, 47) + '..>'
+  return name
 }
