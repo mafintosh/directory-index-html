@@ -28,6 +28,7 @@ function toHTML (opts, list) {
 
   var dir = opts.directory
   var footer = opts.footer
+  var script = opts.script
 
   if (dir[dir.length - 1] === '/') dir = dir.slice(0, -1)
 
@@ -38,7 +39,9 @@ function toHTML (opts, list) {
   return trim(`
     <html>
     <head><title>Index of ${dirname}</title></head>
-    <body bgcolor="white"><h1>Index of ${dirname}</h1><hr><pre>${pre}</pre><hr>${footer ? '<i>' + footer + '</i>' : ''}</body>
+    <body bgcolor="white"><h1>Index of ${dirname}</h1><hr><pre>${pre}</pre><hr>${footer ? '<i>' + footer + '</i>' : ''}
+    ${script ? '<script>' + script + '</script>' : ''}
+    </body>
     </html>
   `)
 
